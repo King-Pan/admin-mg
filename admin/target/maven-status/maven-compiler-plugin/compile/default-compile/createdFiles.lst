@@ -1,0 +1,5 @@
+club/javalearn/admin/entity/QDataDict.class
+club/javalearn/admin/entity/QRole.class
+club/javalearn/admin/entity/QPermission.class
+club/javalearn/admin/entity/QUser.class
+club/javalearn/admin/entity/QLog.class
