@@ -43,4 +43,16 @@ https://www.jianshu.com/p/3c51832f1051
 fatal: refusing to merge unrelated histories
 
 
-git
+git pull origin master --allow-unrelated-histories
+
+
+```
+king-pan@King-Pan-PC  ~/Documents/GitHub/admin-mg   master  git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+ ✘ king-pan@King-Pan-PC  ~/Documents/GitHub/admin-mg   master  git push --set-upstream origin master
+
+```
