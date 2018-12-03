@@ -36,3 +36,11 @@ https://www.cnblogs.com/HowieYuan/p/9259650.html
 
 
 https://www.jianshu.com/p/3c51832f1051
+
+
+> git错误
+
+fatal: refusing to merge unrelated histories
+
+
+git
