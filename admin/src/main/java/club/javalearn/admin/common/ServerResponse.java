@@ -2,6 +2,8 @@ package club.javalearn.admin.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -14,11 +16,13 @@ import java.io.Serializable;
  * Time: 上午11:31
  * Description: No Description
  */
+@Data
 @Component
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class ServerResponse<T> implements Serializable {
     private int status;
     private String msg;
+    private String token;
     private T data;
     public ServerResponse(){}
     private ServerResponse(int status) {
@@ -38,6 +42,13 @@ public class ServerResponse<T> implements Serializable {
     private ServerResponse(int status, String msg, T data) {
         this.status = status;
         this.msg = msg;
+        this.data = data;
+    }
+
+    private ServerResponse(int status, String msg,String token, T data) {
+        this.status = status;
+        this.msg = msg;
+        this.token = token;
         this.data = data;
     }
 
@@ -77,6 +88,10 @@ public class ServerResponse<T> implements Serializable {
 
     public static <T> ServerResponse<T> createBySuccess(String msg, T data) {
         return new ServerResponse<T>(ResponseCode.SUCCESS.getCode(), msg, data);
+    }
+
+    public static <T> ServerResponse<T> createBySuccess(String msg,String token, T data) {
+        return new ServerResponse<T>(ResponseCode.SUCCESS.getCode(), msg, token, data);
     }
 
     public static <T> ServerResponse<T> createByError() {

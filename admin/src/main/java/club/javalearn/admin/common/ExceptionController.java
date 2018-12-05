@@ -40,7 +40,7 @@ public class ExceptionController {
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(UnauthorizedException.class)
     public ServerResponse handle401() {
-        return ServerResponse.createByErrorCodeMessage(401, "Unauthorized", null);
+        return ServerResponse.createByErrorCodeMessage(401, "您没有权限，请联系管理员", null);
     }
 
 
